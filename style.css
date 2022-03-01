@@ -5,7 +5,6 @@
 
 body {
     height: 100vh;
-    width: 99vw;
     margin:auto;
 }
 p {
@@ -126,6 +125,14 @@ main .showing .house img:hover {
     transform: scale(1.2);
 }
 
+
+@keyframes button {
+    0% {transform: scale(1);}
+    25% {transform: rotate(10deg);}
+    50% {transform: rotate(-10deg);}
+    75% {transform: rotate(10deg);}
+    100% {transform: rotate(0deg);}
+}
 main .selection {
     background-image: url(img/Hejrelunden.jpg);
     height: 50vh;
@@ -134,9 +141,11 @@ main .selection {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 main .selection button {
     font-family: 'Lato';
+    font-size: 2em;
     border: 2px solid white;
     background-color: transparent;
     color: white;
@@ -146,6 +155,8 @@ main .selection button {
 }
 main .selection button:hover {
     border: 2px solid rgb(145, 51, 51);
+    animation-name: button;
+    animation-duration: 1.5s;
 }
 
 footer {
@@ -187,8 +198,17 @@ footer .SoMe img {
         margin: 0;
     }
     
+    /* Header + nav styling  */
     header {
         height: 20vh;
+    }
+    /* @keyframes slide-out {
+        from{background-color:#161616;top:50px; right:0px;}
+        to {background-color: transparent; top:50px; right: -200px;}
+    } */
+    @keyframes slide-menu {
+        from {background-color: transparent; top:50px; right: -200px;}
+        to {background-color:#161616;top:50px; right:0px;}
     }
     header nav {
         display: none;
@@ -206,6 +226,8 @@ footer .SoMe img {
         color:rgb(145, 51, 51);
         text-decoration:overline;
     }
+
+    /* hamburger icon styling */
     header .menu {
         display: block;
     }
@@ -219,12 +241,19 @@ footer .SoMe img {
         right:0;
         height:min-content;
         width: 200px;
-
+        transition: all 1s;
+        animation-name: slide-menu;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        margin: 0;
     }
     .menu-btn:checked ~ nav ul {
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
+        font-size: 1.4em;
+        margin: 0;
     }
 
     /* Main styling */
@@ -241,12 +270,32 @@ footer .SoMe img {
         flex-direction: column;
         align-items: center;
     }
+    main .showing .house h2 {
+        margin-top: 40px;
+    }
     main .showing .house {
-        height:fit-content;
-        width: 80%;
+        height:500px;
+        width: 100%;
     }
     main .showing .house img {
-        
+        min-height: 60%;
+        min-width:100%;
     }
 
+    main .selection button {
+        font-size: 1.2em;
+    }
+
+
+    /* Footer styling */
+    footer {
+        flex-wrap: wrap;
+    }
+    footer div {
+        margin-bottom: 40px;
+        margin-left: 20px;
+    }
+    footer div:first-of-type {
+        margin-left:0;
+    }
 }
