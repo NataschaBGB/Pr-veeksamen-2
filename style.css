@@ -336,7 +336,7 @@ footer .SoMe img {
     /* Main styling */
 
     main .choice .content {
-        height:400px;
+        height:600px;
     }
     main .choice .content h2 {
         animation: none;
@@ -351,7 +351,7 @@ footer .SoMe img {
         align-items: center;
         animation: none;
         position: absolute;
-        top:350px;
+        top:300px;
     }
     main .choice .second {
         display: flex;
@@ -359,10 +359,11 @@ footer .SoMe img {
         align-items: center;
         animation: none;
         position: absolute;
-        top:430px;
+        top:440px;
     }
     main .choice article p {
         max-width: 100%;
+        margin:40px 50px;
     }
 
     main .showing .content {
@@ -382,6 +383,9 @@ footer .SoMe img {
         object-fit: contain;
     }
 
+    main .selection {
+        height: 400px;
+    }
     main .selection button {
         font-size: 1.5em;
         padding: 40px;
@@ -393,6 +397,7 @@ footer .SoMe img {
         flex-direction: column;
         gap:0;
         font-size: 1.3em;
+        margin: 0px 100px;
     }
     footer div {
         margin: 20px 0px;
